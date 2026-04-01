@@ -108,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error("Wallets not configured yet");
             }
 
-            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
+            // Using Ankr's open public node which bypasses CORS origin blocking for GitHub Pages
+            const connection = new solanaWeb3.Connection('https://rpc.ankr.com/solana');
             
             const pubkeys = [
                 new solanaWeb3.PublicKey(TREASURY_WALLETS['1h']),
@@ -258,8 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
         donateBtn.disabled = true;
 
         try {
-            // Connect to Solana Mainnet
-            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
+            // Connect to Solana Mainnet (Open Node)
+            const connection = new solanaWeb3.Connection('https://rpc.ankr.com/solana');
 
             // Calculate Lamports needed per split (25% to each of the 4 wallets)
             const splitUsdValue = usdValue / 4;
