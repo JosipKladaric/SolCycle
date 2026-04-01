@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SolCycle - A decentralized continuous prize pool driven by community donations on Solana.">
+    <title>SolCycle | The Continuous Prize Pool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon">◎</span> SolCycle
+        </div>
+        <button id="connectWalletBtn" class="btn-primary">Connect Wallet</button>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Donate. Participate. <span class="text-gradient">Win.</span></h1>
+            <p>One donation enters you into 4 continuous prize cycles. A provably fair, bot-operated reward system powered by Solana.</p>
+        </header>
+
+        <section class="cycles-grid">
+            <!-- 1 Hour Cycle -->
+            <div class="cycle-card glass">
+                <div class="cycle-header" style="margin-bottom: 8px;">
+                    <h2>1-Hour Cycle</h2>
+                </div>
+                <div class="wallet-copy-pill" onclick="navigator.clipboard.writeText('Cc2FQ1s3iAjUQ9aJEyTKRmE4eYvVeF2Lzfc8aRXAos9s'); var s1=this.querySelector('span'); var o1=s1.textContent; s1.textContent='Copied!'; setTimeout(()=>s1.textContent=o1, 2000);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sol-green)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>Cc2F...os9s</span>
+                </div>
+                <div class="cycle-stats">
+                    <div class="stat">
+                        <span class="stat-label">Current Pot</span>
+                        <span class="stat-value text-gradient" id="pot-1h">$0.00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Participants <span class="tooltip-icon" data-tooltip="Rolls over if <10 participants">?</span></span>
+                        <span class="stat-value" id="parts-1h">0</span>
+                    </div>
+                    <div class="stat countdown-box">
+                        <span class="stat-label">Time Remaining</span>
+                        <span class="stat-value countdown" id="time-1h">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24 Hour Cycle -->
+            <div class="cycle-card glass">
+                <div class="cycle-header" style="margin-bottom: 8px;">
+                    <h2>24-Hour Cycle</h2>
+                </div>
+                <div class="wallet-copy-pill" onclick="navigator.clipboard.writeText('AwhKTZzQaE8kTD4v9vcQjyzwxELKkkBBjHaUwjXv2eC8'); var s2=this.querySelector('span'); var o2=s2.textContent; s2.textContent='Copied!'; setTimeout(()=>s2.textContent=o2, 2000);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sol-green)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>AwhK...2eC8</span>
+                </div>
+                <div class="cycle-stats">
+                    <div class="stat">
+                        <span class="stat-label">Current Pot</span>
+                        <span class="stat-value text-gradient" id="pot-24h">$0.00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Participants</span>
+                        <span class="stat-value" id="parts-24h">0</span>
+                    </div>
+                    <div class="stat countdown-box">
+                        <span class="stat-label">Time Remaining</span>
+                        <span class="stat-value countdown" id="time-24h">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 Day Cycle -->
+            <div class="cycle-card glass">
+                <div class="cycle-header" style="margin-bottom: 8px;">
+                    <h2>7-Day Cycle</h2>
+                </div>
+                <div class="wallet-copy-pill" onclick="navigator.clipboard.writeText('8SuCjr72UMyvBdD7VGox1EDZtfc2VKCeEYNk4EwBY8JZ'); var s3=this.querySelector('span'); var o3=s3.textContent; s3.textContent='Copied!'; setTimeout(()=>s3.textContent=o3, 2000);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sol-green)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>8SuC...Y8JZ</span>
+                </div>
+                <div class="cycle-stats">
+                    <div class="stat">
+                        <span class="stat-label">Current Pot</span>
+                        <span class="stat-value text-gradient" id="pot-7d">$0.00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Participants</span>
+                        <span class="stat-value" id="parts-7d">0</span>
+                    </div>
+                    <div class="stat countdown-box">
+                        <span class="stat-label">Time Remaining</span>
+                        <span class="stat-value countdown" id="time-7d">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1 Year Cycle -->
+            <div class="cycle-card glass">
+                <div class="cycle-header" style="margin-bottom: 8px;">
+                    <h2>1-Year Cycle</h2>
+                </div>
+                <div class="wallet-copy-pill" onclick="navigator.clipboard.writeText('5HWGKZcAbaoFk1vpDCFyCc9ruJP6d9jDTypQckinr1uw'); var s4=this.querySelector('span'); var o4=s4.textContent; s4.textContent='Copied!'; setTimeout(()=>s4.textContent=o4, 2000);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sol-green)" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span>5HWG...r1uw</span>
+                </div>
+                <div class="cycle-stats">
+                    <div class="stat">
+                        <span class="stat-label">Current Pot</span>
+                        <span class="stat-value text-gradient" id="pot-1y">$0.00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Participants</span>
+                        <span class="stat-value" id="parts-1y">0</span>
+                    </div>
+                    <div class="stat countdown-box">
+                        <span class="stat-label">Time Remaining</span>
+                        <span class="stat-value countdown" id="time-1y">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="donation-section glass">
+            <div class="donation-content">
+                <h2>Enter the Cycles</h2>
+                <p class="subtitle">Minimum donation is $1.00. Higher donations increase your entries proportionally.</p>
+                
+                <div class="input-group">
+                    <span class="currency-prefix">$</span>
+                    <input type="number" id="donationAmount" min="1" step="1" value="10" placeholder="Enter amount...">
+                </div>
+
+                <div class="distribution-preview">
+                    <h3>How your <span id="displayAmount">$10.00</span> gets distributed:</h3>
+                    <div class="distribution-bars">
+                        <div class="dist-item">
+                            <span class="dist-name">1-Hour</span>
+                            <span class="dist-value text-gradient" id="split-1h">$2.50</span>
+                        </div>
+                        <div class="dist-item">
+                            <span class="dist-name">24-Hour</span>
+                            <span class="dist-value text-gradient" id="split-24h">$2.50</span>
+                        </div>
+                        <div class="dist-item">
+                            <span class="dist-name">7-Day</span>
+                            <span class="dist-value text-gradient" id="split-7d">$2.50</span>
+                        </div>
+                        <div class="dist-item">
+                            <span class="dist-name">1-Year</span>
+                            <span class="dist-value text-gradient" id="split-1y">$2.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="donateBtn" class="btn-primary btn-large">
+                    Donate & Enter Pools
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> SolCycle. 100% transparent and bot-operated.</p>
+    </footer>
+
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
